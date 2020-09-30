@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>页面元素操作</title>
+</head>
+<body>
+<div class="box">
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+</div>
+<div class="box" title="box2"><span>box2</span></div>
+<p class="p">papapapapa</p>
+</body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+//   1）创建DOM节点
+//
+// ​		$(dom节点内容)
+    var dom=  $('<p><span>这是添加的dom节点</span></p>');//创建节点
+    console.log(dom);
+
+//   2）在内部添加节点
+
+// ​		append()
+//   $('.box').append(dom);//把创建的节点放进其他节点里（从后面加）
+// ​		appendTo()
+//     $(dom).appendTo($('.box'));//把创建的节点放进其他节点里（从后面加）
+//上面两种方法一样，但是注意格式
+
+
+// ​		prepend()
+// $('.box').prepend(dom);//把创建的节点放进其他节点里（从前面加）
+// ​		prependTo()
+// $(dom).prependTo($('.box'));//把创建的节点放进其他节点里（从前面加）
+//上面两种方法一样，但是注意格式
+
+//   3)在外部添加节点
+//
+// ​		before()
+//       $('.box').before($('<strong>添加的内容</strong>'))
+// ​		insertBefore()
+//       ($('<strong>添加的内容</strong>')).insertBefore($('.box'))
+
+
+// ​		after()
+//  $('.box').after($('<strong>添加的内容</strong>'))
+
+// ​		insertAfter()
+//  ($('<strong>添加的内容</strong>')).insertAfter($('.box'))
+
+//   4）复制DOM节点
+//
+
+      $('.p').click(function () {
+        alert(11111)
+      });
+
+// ​		clone()
+      // $('.box').append($('.p').clone())//只克隆dom，不可隆dom的事件，即不会像前面定义的会弹窗
+
+// ​		clone(true)
+// $('.box').append($('.p').clone(true))//加了true，克隆dom及dom的事件，会像前面定义的会弹窗
+
+//   5）删除DOM节点
+//
+// ​		remove()
+$('.box').remove();//全部删除了，包括标签也没有了
+
+
+// ​		remove(dom节点)
+//       $('.box').remove('[title]')
+// 同级里面删除
+
+// ​		empty()
+</script>
+</html>

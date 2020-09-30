@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>表单选择器</title>
+	</head>
+	<body>
+		<input type="text" value=""><br>
+		<input type="password" value=""><br>
+		<input type="button" value=""><br>
+		<input type="submit" value=""><br>
+		<button>tijiao</button>
+	</body>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script>
+		// ：input      选择所有input标签
+		//   $(':input').val('abcdefg')
+
+		// ：button    选择所有按钮
+		//   $(':button').val('abcdefg')//只选择了type为button的
+
+		// ：submit    选择所有提交
+		//   $(':submit').val('bbbabab')
+
+		// ：text   选择文本框
+		//   $(':text').val('bbbabab')
+
+
+		// ：password   选择password
+		$(':password').val('bbbabab')
+	</script>
+</html>

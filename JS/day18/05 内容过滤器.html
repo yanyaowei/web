@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>内容过滤器</title>
+	</head>
+	<body>
+		<ul>
+			<li>li01</li>
+			<li>li02</li>
+			<li class="li3">li03</li>
+			<li>li04</li>
+			<li>li05</li>
+			<h1>333</h1>
+			<h3>22</h3>
+			<h5>55</h5>
+			<p>aaa</p>
+			<p>bbb</p>
+			<p>vccc</p>
+			<p>ssss</p>
+			<p>aaaaaaaa</p>
+			<p><i><span></span></i></p>
+		</ul>
+	</body>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script>
+		// :contains(text)  获取包含指定文本内容的元素
+		// $('p:contains(aaa)').css('color','red')
+		// $('p:contains(ccc)').css('color','red')
+
+		//   :empty   获取不包含子元素或文本内容的元素
+		// $('p:empty').html('新的内容')//相当于有标签在那里，但是没文本内容
+
+		//   :has(selector)   获取含有选择器所匹配的元素
+		$('p:has(span)').html('span的')
+
+		//   :parent  获取含有子元素或文本的元素
+		// $('p:parent').html('新的内容')
+	</script>
+</html>

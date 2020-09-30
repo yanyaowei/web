@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  // var str1='How are you?';
+  // var str2= new String('Hello world');
+  // console.log(str1.length,str2.length);
+  // console.log(str1.charAt(5))
+  // console.log(str1.charCodeAt(5))
+  //
+  // console.log(str1.slice(2,5))//截取下标为2,3,4的字符串
+  // console.log(str1.substring(2,5))//截取下标为2,3,4的字符串
+  // console.log(str1.substr(2,5))//从下表为2开始截取5个字符，若截取个数不够，从指定下标截取到最后
+  // console.log(str1.substr(2))//从下表为2开始截取5个字符，若截取个数不够，从指定下标截取到最后
+  // console.log(str1.substr(-2))//反向截取，从后往前截取
+
+  var str='how eye q? yd'
+  console.log(str.toLowerCase())//全部转化为小写字母
+  console.log(str.toUpperCase())//全部转化为大写字母
+  console.log(str.match('how'));//返回匹配的字符串内容（是一个数组）
+  console.log(str.match('how')[0]);//返回匹配的内容
+  console.log(str.match('how').index);//返回匹配的字符开始的下标
+  console.log(str.match('aa'))
+  console.log(str.match(/y/))
+
+  console.log(str.replace('y','666'))
+  console.log(str.replace(/\y/g,'666'))//g为全局替换的意思
+  console.log(str.replace('','666'))//在前面添加内容
+  console.log(str.replace('how',''))//删除内容
+  console.log(str.replace(/d/ig,'988'))//i为忽略字母大小写
+
+  console.log(str.search('how'))//寻找how的开始下标
+  console.log(str.search(/\?/))//寻找?的开始下标
+
+  var arr=str.split();//字符串形式输出
+  console.log(arr)
+  var arr=str.split(' ');//以空格分界字符串形式输出
+  console.log(arr)
+  var arr=str.split('');//把每个字符切割分成一个字符输出
+  console.log(arr)
+
+  console.log(String.fromCharCode(65))//输出ASCII码值65对应的字符
+  console.log(String.fromCharCode(98))//输出ASCII码值65对应的字符
+
+  var s1='aaa',s2='bbb';
+  console.log(s1.localeCompare(s2))
+</script>
+</body>
+</html>

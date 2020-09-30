@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  //需求：1！+2！+6！=？
+ /* function fact(n) {
+    if (n==1){
+      return 1;
+    } else{
+      return n*arguments.callee(n-1)
+    }
+  }
+  fact(6);
+  var sum=0;
+  for (var i=1;i<=6;i++){
+    sum+=fact(i);
+  }
+  console.log(sum);*/
+
+ //需求：使用正则表达式校验密码：只能输入6-20个字母、数字、下划线
+/*
+  var password=prompt('请输入需要验证的密码：')
+  var reg=/^[A-Za-z0-9_]{6,20}$/;
+  if (!reg.test(password)){//验证密码
+    alert('您输入的密码格式错误，请输入由6-20个字母组成的密码')
+  }
+*/
+
+  //需求：把稀疏数组变为不稀疏数组
+ /* var arr=[],newArry=[];
+  arr[2]=23;
+  arr[4]='good';
+  arr[6]=true;
+  // alert(arr);//直接输出就是稀疏数组，因为中间有些没有值，会用.代替
+  for (var i=0;i<arr.length;i++){
+    if (arr[i]){
+      newArry.push(arr[i]);
+    }
+  }
+  console.log(newArry);*/
+
+
+ //需求：将[1,2,2,3,5,4,3,3,3,3,5,4,6,7,6,9,9,9,9]数组去重复
+  var arr=[1,2,2,3,5,4,3,3,3,3,5,4,6,7,6,9,9,9,9],newArry=[];
+  for (var i=0;i<=arr.length;i++){
+    if (newArry.indexOf(arr[i])<0){
+      newArry.push(arr[i]);
+    }
+  }
+  document.write(newArry)
+</script>
+</body>
+</html>

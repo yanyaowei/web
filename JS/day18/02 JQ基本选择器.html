@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>基本选择器</title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.js"></script>
+		<script>
+			//如果JQ代码写在body前，必须将代码写在ready事件中，ready事件表示所有DOM加载完成后才执行
+			$(document).ready(function() {
+				console.log($('.box'));
+			});
+			//简化写法,ready时间可以写多个，相当于JS中的onload事件，区别是：可以出现多次ready事件，而onload在一个页面中只能出现一次
+			$(function() {
+				console.log($('.box'));
+			});
+			$(function() {
+				// console.log($('.box'));
+				$('#box')
+					.css({
+						color: 'blue',
+						background: '#eee'
+					});
+
+				$('.box') //选择所有的class为box的
+					.css({
+						color: 'blue',
+						background: '#eee',
+						marginBottom: '10px' //有短横线写成“margin-bottom" ,没有短横线写成小驼峰写法
+					});
+
+				$('p')
+					.css({
+						color: 'red',
+						background: '#eee',
+						marginBottom: '10px' //有短横线写成“margin-bottom" ,没有短横线写成小驼峰写法
+					})
+
+				//选择所有的 *
+				//     console.log($('*'))
+
+				//逗号
+				$('#box,.box,p').click(function() {
+					console.log($(this).html()) //获取点击对象的内容
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="box">Class1</div>
+		<div class="box">Class2</div>
+		<div class="box">Class3</div>
+		<div id="box">Id</div>
+		<p>hahaha1</p>
+		<p>hahaha2</p>
+		<p>hahaha3</p>
+	</body>
+
+</html>

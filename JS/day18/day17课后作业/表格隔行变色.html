@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>表哥隔行变色</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    table{
+      border-collapse: collapse;/*为表格设置合并边框模型为单线边框*/
+      margin:50px auto 0 ;
+    }
+   tr{
+      text-align: center;
+    }
+    td{
+      height: 40px;
+      width: 600px;
+    }
+    th{
+      background-color: rgb(0,153,203);
+      color: #fff;
+      height: 50px;
+    }
+    tbody tr:nth-child(even){/*even偶数行*/
+      background-color: #999;
+    }
+    tbody tr:nth-child(odd){/*even偶数行*/
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <table border="1" width="400">
+    <thead>
+    <tr>
+      <th>序号</th>
+      <th>姓名</th>
+      <th>课程</th>
+      <th>成绩</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>001</td>
+      <td>张三</td>
+      <td>前端开发</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <td>002</td>
+      <td>李四</td>
+      <td>java开发</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <td>003</td>
+      <td>王五</td>
+      <td>Python开发</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <td>004</td>
+      <td>麻子</td>
+      <td>UI设计</td>
+      <td>89</td>
+    </tr>
+    <tr>
+      <td>005</td>
+      <td>老哥</td>
+      <td>就业指导</td>
+      <td>98</td>
+    </tr>
+    <tr>
+      <td>006</td>
+      <td>表格</td>
+      <td>dom设计</td>
+      <td>88</td>
+    </tr>
+    </tbody>
+  </table>
+</body>
+<script>
+  var trs=document.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+  for (var i in trs) {
+    //鼠标移入改变背景颜色属性为黄色
+  trs[i].onmouseover=function () {
+    this.style.backgroundColor='yellow';
+  };
+  //鼠标移出还原（取消了之前移入时加的背景属性）
+  trs[i].onmouseout=function () {
+      this.style.backgroundColor='';
+    }
+  }
+
+</script>
+</html>

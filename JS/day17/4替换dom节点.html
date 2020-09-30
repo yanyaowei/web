@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>替换节点</title>
+</head>
+<body>
+<div class="box">box</div>
+<strong>strong</strong>
+<script>
+
+  //1.创建节点
+  var newP=document.createElement('p');
+  newP.setAttribute('style','color:pink;border:2px dotted #000');
+  newP.setAttribute('title','修改内容');
+  newP.innerHTML='这是修改后的内容';
+  console.log(newP);
+
+  //2.替换节点
+  var obody=document.body;//基于性能考虑，对于节点的获取最好缓存到变量中
+  var oldstrong=document.getElementsByTagName('strong')[0];
+  obody.replaceChild(newP,oldstrong);
+  //替换方式是     父节点.replaceChild(新节点，老节点)
+</script>
+</body>
+</html>

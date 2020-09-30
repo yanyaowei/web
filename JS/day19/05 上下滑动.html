@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>上下滑动</title>
+  <style>
+    .box{
+      width: 400px;
+      height: 300px;
+      background-color: #ff501d;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+<div class="box">box</div>
+</body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+  // ##### 2)滑动//菜单展开或手风琴效果
+  //   slideDown（）	  向下滑动
+  $('button').eq(0).click(function () {
+    // $('.box').slideDown(200)
+    // $('.box').slideDown('fast')
+    // $('.box').slideDown('normal')
+    $('.box').slideDown('slow')
+
+  })
+  //   slideUp（） 		向上滑动
+  $('button').eq(1).click(function () {
+    $('.box').slideUp()
+  })
+
+
+</script>
+</html>

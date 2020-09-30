@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>操作内联样式</title>
+</head>
+<body>
+<p style="color:red;">这是一段测试文本</p>
+<p style="color:blue;font-size: 28px;">这是第二段测试文本</p>
+<div>div</div>
+<script>
+  var pdom=document.querySelectorAll('p');//ie8以下不兼容
+  //获取内联样式（适用于style样式少的时候）
+  console.log(pdom[0].style.color);//获取style里color属性值(样式少的时候）
+  console.log(pdom[1].style.fontSize);
+
+  console.log(pdom[0].style.cssText);//获取style所有内容
+  console.log(pdom[1].style.cssText);//获取style所有内容
+
+  //将cssText返回的字符串转换为对象（适用于style多的时候获取样式）
+  var str=pdom[1].style.cssText,arr=[];cssObj={};
+  arr= str.split('; ');
+  // console.log(arr);
+  for (var i in arr){
+    // console.log(arr[i]);
+    var newArr=null;
+    newArr=arr[i].split(': ');
+    // console.log(newArr);
+    cssObj[newArr[0]]=newArr[1];
+  }
+  console.log(cssObj);
+  console.log(cssObj.color);
+  console.log(cssObj['font-size']);
+
+  //改变内联样式
+  pdom[0].style.color='pink';
+  pdom[1].style.fontSize='10px';
+
+  document.querySelector('div').style.cssText='color:red;background-color:blue;'
+</script>
+</body>
+</html>

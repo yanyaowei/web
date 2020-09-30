@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .p-style{
+      color: red;
+      background-color: gray;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    .demo{
+      border: 4px solid #0000ff;
+    }
+  </style>
+</head>
+<body>
+
+<p class="test p-style">这是测试文本</p>
+<p class="test">这是第二个文本</p>
+
+
+<script>
+  // i)获取class
+  // 节点.className 获取节点的所有class
+  console.log(document.getElementsByClassName('test')[0].className);
+  // 节点.getAttribute("class") 获取节点的所有class
+  console.log(document.querySelector('.test').className);
+  console.log(document.querySelector('.test').getAttribute('class'));
+
+  // ii)设置class
+  // 节点.className = 值
+  // 都是覆盖替换：
+  document.getElementsByTagName('p')[1].className='p-style';//把第二个类名test替换成了p-style
+  // document.getElementsByClassName('test')[1].className='p-style';//把第二个类名test替换成了p-style
+
+  // 节点.setAttribute("class",值)
+  document.getElementsByTagName('p')[1].setAttribute('class','test1 p-style demo');
+
+  // iii)其它方法
+  // 节点.classList.add(value); //为元素添加指定的类(不会覆盖以前的类名)
+  document.getElementsByTagName("p")[1].classList.add('aaa');
+  // 节点.classList.contains(value); // 判断元素是否含有指定的类，如果存在返回true
+  // if ( document.getElementsByTagName("p")[1].classList.contains('p-style')){
+  //   // alert('有');
+  //   document.getElementsByTagName("p")[1].classList.remove('p-style');
+  // }else{
+  //   // alert('无');
+  //   document.getElementsByTagName("p")[1].classList.add('p-style');
+  // }
+  // 节点.classList.remove(value); // 删除指定的类
+  // document.getElementsByTagName("p")[1].classList.remove('p-style');
+
+  // 节点.classList.toggle(value); // 有就删除，没有就添加指定类
+  var som=document.getElementsByTagName("p")[1];
+  som.onclick=function () {
+    alert();
+    som.classList.toggle('p-style');//切换样式操作，有就删除，没有就添加指定类
+  }
+
+</script>
+</body>
+</html>

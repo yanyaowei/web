@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var arr1=[1,2,3,4];
+  //   //添加
+  // arr.push(10)
+  // console.log(arr)
+  // //删除
+  // arr.pop();//每次只能删除一个，从后往前删除
+  // console.log(arr)
+  // //向数组头部添加数据,持续在最前面添加
+  // arr.unshift('xiaowei')
+  // arr.unshift('good')
+  // console.log(arr)
+  // //删除数组第一个元素,从最前面删
+  // arr.shift()
+  // arr.shift()
+  // console.log(arr)
+  // //将两个数组或多个数组合成一个数组
+  // var arr1=['a','b','c']
+  // var arr2=[6,6,6,6]
+  // var arr3=arr.concat(arr1,arr2)
+  // console.log(arr3)
+  // //对数组进行倒序处理
+  // var arr4=arr.reverse();
+  // console.log(arr4)
+  // //将数组转换成字符串
+  // var str=arr.join('+')//中间可以自定义连接符号
+  // console.log(str)
+  //删除元素
+  // var arr5=arr.splice(2,3);//这里的2和3是下标
+  // console.log(arr)//返回删除之后的元素
+  // console.log(arr5)//返回被删除的元素
+  //修改元素
+//   var arr2=arr1.splice(1,2,'aa','bh','dhs');//下表为1和2的位置被替换为‘aa’
+// console.log(arr1);//修改后的arr1
+//   console.log(arr2)//被修改的部分
+  //添加元素
+  var arr2=arr1.splice(0,0,'aaaaa','bbgjd','开头')
+  console.log(arr1)
+  var  arr3=arr1.splice(3,0,'可以')
+  console.log(arr1)
+  var arr4=arr1.splice(arr1.length,0,'结尾')
+  console.log(arr1)
+</script>
+</body>
+</html>

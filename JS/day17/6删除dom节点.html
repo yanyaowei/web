@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>删除节点</title>
+</head>
+<body>
+<div class="box">
+  <strong>strong</strong>
+  <span>span</span>
+  <ul>
+    <li>li1</li>
+    <li>li2</li>
+    <li>li3</li>
+    <li>li4</li>
+    <li>li5</li>
+  </ul>
+</div>
+<script>
+  var box=document.getElementsByClassName('box')[0];
+  //1、删除当前节点及子节点： 节点.remove();//括号里不能传参
+  //   box.remove();
+
+  //2、删除子节点:  父节点.remove(子节点）；
+  var span=box.getElementsByTagName('span')[0];
+  box.removeChild(span);
+
+  //3、删除ul中的所有li
+  var uls=document.getElementsByTagName('ul')[0];
+  var lis=uls.getElementsByTagName('li');
+  for (var i=0;i<lis.length;i++) {
+    uls.removeChild(lis[i]);
+    --i;//因为第一次干掉了li1，所以之前的li2下标变成了0（重新定义下标）；因此加了--以后就会一直删除下标为0的
+  }
+</script>
+</body>
+</html>

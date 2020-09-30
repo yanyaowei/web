@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var salary=5000,years=prompt('请输入您的工龄：');
+  if(years>=5){
+    salary=salary*1.2;
+  }else  if(years>=2&&years<=4){
+    salary*=1.15;
+  }else{
+    salary*=1.1;
+  }
+  document.write('您的工龄是：'+years+',您的工资是'+salary);
+</script>
+</body>
+</html>

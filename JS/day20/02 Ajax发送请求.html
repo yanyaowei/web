@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajax</title>
+</head>
+<body>
+<table border="1" width="800" class="students">
+  <caption>学生成绩表</caption>
+  <thead>
+  <tr>
+    <th>学号</th>
+    <th>姓名</th>
+    <th>性别</th>
+    <th>年龄</th>
+    <th>成绩</th>
+    <th>住址</th>
+  </tr>
+  </thead>
+</table>
+
+</body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+  var students=[
+    { id:'999',
+      name:'张三',
+      sex:'male',
+      age:18,
+      score:[78,89,90,100,56,88],
+      addr:'深圳'},
+    { id:'777',
+      name:'李四',
+      sex:'male',
+      age:45,
+      score:[789,89,90,100,56,88],
+      addr:'四川'} ,
+    { id:'666',
+      name:'大哥',
+      sex:'formale',
+      age:35,
+      score:[47,89,90,66,56,77],
+      addr:'北京'}
+  ];
+
+  //写法一：success error
+  // $.ajax({
+  //   type: 'get',
+  //   url: './data/data.json',
+  //   success: function (students) {
+  //     console.log(students)
+  //     for (var i in students) {
+  //       console.log(students[i])
+  //       var data = '<tr><td>' + students[i].id + '</td><td>' + students[i].name + '</td><td>' +
+  //         students[i].sex + '</td><td>' + students[i].age + '</td><td>' +
+  //         students[i].score.join(' ') + '</td><td>' + students[i].addr + '</td></tr>'
+  //       $('.students').prepend(data)
+  //     }
+  //   },
+  //   error: function (err) {
+  //     console.log(err.statusText)
+  //     if (err.status == 404) {
+  //       location.href = '404.html'
+  //     }
+  //   }
+  // })
+
+  //写法二：done fail
+  // $.ajax({
+  //   type: 'get',
+  //   url: './data/data.json'
+  // }).done(
+  //   function (students) {
+  //     console.log(students)
+  //     for (var i in students) {
+  //       console.log(students[i])
+  //       var data = '<tr><td>' + students[i].id + '</td><td>' + students[i].name + '</td><td>' +
+  //         students[i].sex + '</td><td>' + students[i].age + '</td><td>' +
+  //         students[i].score.join(' ') + '</td><td>' + students[i].addr + '</td></tr>'
+  //       $('.students').prepend(data)
+  //     }
+  //
+  // }).fail(function (err) {
+  //   console.log(err.statusText)
+  //   if (err.status == 404) {
+  //     location.href = '404.html'
+  //   }
+  // })
+
+  //写法三：then catch
+  $.ajax({
+    type: 'get',
+    url: './data/data.json'
+  }).then(
+    function (students) {
+      console.log(students)
+      for (var i in students) {
+        console.log(students[i])
+        var data = '<tr><td>' + students[i].id + '</td><td>' + students[i].name + '</td><td>' +
+          students[i].sex + '</td><td>' + students[i].age + '</td><td>' +
+          students[i].score.join(' ') + '</td><td>' + students[i].addr + '</td></tr>'
+        $('.students').prepend(data)
+      }
+    }).catch(function (err) {
+    console.log(err.statusText)
+    if (err.status == 404) {
+      location.href = '404.html'
+    }
+  })
+</script>
+</html>

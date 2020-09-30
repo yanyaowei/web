@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>事件</title>
+  <style>
+    .father {
+      width: 400px;
+      height: 300px;
+      background-color: #f00;
+    }
+
+    .son {
+      width: 200px;
+      height: 100px;
+      background-color: #00f;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">box</div>
+  <div class="father">
+    <div class="son"></div>
+  </div>
+  <form action="">
+    <input type="text" name="user">
+    <input type="submit">
+  </form>
+
+</body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+  //1、点击
+  // $('.box').click(function () {
+  //   $(this).html('这是click出发的时间').css('color','red')
+  // })
+
+  // //2、鼠标移入
+  // $('.box').mouseover(function () {
+  //   $(this).html('这是click出发的时间').css('color','red')
+  // })
+  //
+  // //3、鼠标移出
+  // $('.box').mouseout(function () {
+  //   $(this).html('这是click出发的时间').css('color','red')
+  // });
+  //把移入移出绑定在一起
+  //   $('.box').bind('mouseover mouseout',function () {
+  //     console.log(11111);
+  //   })//这里的bind也可以换成on；若果是one，就只执行一次
+
+  //4、mouseenter
+  // 下面这个会出现事件冒泡
+  // $('.father').mouseover(function () {
+  //   console.log('father')
+  // });
+  // $('.son').mouseover(function () {
+  //   console.log('son')
+  // });//放入子元素时，父元素触发了！冒泡事件//显示father，son，father
+  //下面这个会阻止事件冒泡
+  // $('.father').mouseenter(function () {
+  //   console.log('father')
+  // });
+  // $('.son').mouseenter(function () {
+  //   console.log('son')
+  // });//放入子元素时，没有触发父元素！//显示father，son
+  // 5、mouseleave（同mouseenter一样，会阻止冒泡事件）
+  // $('.father').mouseleave(function () {
+  //   console.log('father')
+  // });
+  // $('.son').mouseleave(function () {
+  //   console.log('son')
+  // })
+
+  //6.keydown()按下键盘键
+  // $('input[name=user]').keydown(function (e) {//e获取键值
+  //   // console.log(e)
+  //   if(e.keyCode===13){//当按下回车键时执行
+  //     console.log($(this).val())
+  //   }
+  // })
+  //7.keyup()  松开键盘键
+  // $('input[name=user]').keyup(function (e) {
+  //   // console.log(e)
+  //   if(e.keyCode===13){//当松开回车键时执行
+  //     console.log($(this).val())
+  //   }
+  // })
+  //8.keypress（）从键盘输入字符//注意：keypress不识别键盘上的功能键
+  // $('input[name=user]').keypress(function (e) {//获取字符
+  //   // console.log(e)
+  //   if(e.keyCode===65){//当按下键时执行//keyCode是ascll码，65是大写字母A
+  //     console.log($(this).val())
+  //   }
+  // })
+
+  // 9、focus()元素获得焦点
+  // $('input[name=user]').focus(function () {
+  //   alert('good')
+  // })
+  //
+
+  // 10、blur()失焦
+  // $('input[name=user]').blur(function () {
+  //   var val=$(this).val();
+  //   if(val.length<2 ||val.length>8){
+  //     alert('您输入的字符应该在2-8之间')
+  //   }
+  // })
+
+  // 11、submit（）用户提交表单
+  //     $('form').submit(function () {
+  //       alert('提交成功')
+  //     })//方法一：form用submit表单提交
+  //     $('input[type=submit]').click(function () {
+  //       alert('提交成功')
+  //     })//方法二：input点击事件
+
+  // 12、hover（）
+  // $('.box').hover(function (){
+  //   $(this).css('color','red')
+  // },function () {
+  //   $(this).css('color','blue')
+  // });
+  // 或者用下面的方法：
+  //   $('.box').mouseenter(function (){
+  //     $(this).css('color','blue')
+  //   }).mouseleave(function (){
+  //     $(this).css('color','red')
+  //   });
+
+  // 13、ready（）DOM加载完成后再出发中间事件
+
+  //14、resize（）浏览器窗口大小发生变化、触发window事件
+  $(window).resize(function () {
+    console.log('1111111')
+  })
+</script>
+
+</html>

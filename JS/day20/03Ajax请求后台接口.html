@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ajax</title>
+</head>
+<body>
+<ul class="goods"></ul>
+</body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+  $.ajax({
+    url: 'http://www.hspstudio.club/seller'
+  }).then(function(res){
+    console.log(res.goods);
+    var data=res.goods;//缓存
+    for(var i in data){
+      // console.log(goods);
+      // console.log(goods.foods[i]);
+      $('.goods').append('<li>'+data[i].name+'</li>')
+
+  }})
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>淡入淡出</title>
+  <style>
+    .box{
+      width: 400px;
+      height: 300px;
+      background-color: #ff501d;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<button>淡入</button>
+<button>淡出</button>
+<button>淡入到指定不透明度</button>
+<div class="box">box</div>
+</body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+  // fadeIn（）	淡入
+  $('button').eq(0).click(function () {
+    // $('.box').fadeIn(200)
+    $('.box').fadeIn('fast')
+    // $('.box').fadeIn('normal')
+    // $('.box').fadeIn('slow')
+  });
+
+
+  // fadeOut（）	淡出
+  $('button').eq(1).click(function () {
+    // $('.box').fadeOut()
+    // $('.box').fadeOut(300)
+    // $('.box').fadeOut('normal')
+    $('.box').fadeOut('fast')
+    // $('.box').fadeOut('slow')
+  })
+
+
+  // fadeTo()	淡入到指定不透明度
+  $('button').eq(2).click(function () {
+    // $('.box').fadeTo(200,0.5)//必须穿入两个参数。第一个是动画时间，第二个参数表示淡入的不透明度
+    // $('.box').fadeTo('fast',0.5)
+    // $('.box').fadeTo('slow',0.5)
+    // $('.box').fadeTo('normal',0.5)
+    $('.box').fadeTo('',0.5)
+  })
+</script>
+</html>

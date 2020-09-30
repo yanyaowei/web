@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="wrapper">
+  <div class="box">
+    <div id="content" title="标题">这是测试内容</div>
+  </div>
+</div>
+<script>
+  //一、节点的名称（nodeName）
+  //标签节点
+  console.log(document.getElementById('content').nodeName);//DIV
+  //属性节点
+  console.log(document.getElementById('content').getAttributeNode('title').nodeName);//#title
+  //文本节点
+  console.log(document.getElementById('content').childNodes[0].nodeName);//#text
+  //文档节点
+  console.log(document.nodeName);//#document
+  //二、节点的值(nodeValue)
+  //标签节点
+  console.log(document.getElementById('content').nodeValue);//null
+  //属性节点
+  console.log(document.getElementById('content').getAttributeNode('title').nodeValue);//标题
+  //文本节点
+  console.log(document.getElementById('content').childNodes[0].nodeValue);//这是测试内容
+  //文档节点
+  console.log(document.nodeValue);//null
+  //三、节点的类型（元素1  属性2  文本3   注释8  文档9）
+  console.log(document.getElementById('content').nodeType);//1
+  //属性节点
+  console.log(document.getElementById('content').getAttributeNode('title').nodeType);//2
+  //文本节点
+  console.log(document.getElementById('content').childNodes[0].nodeType);//3
+  //文档节点
+  console.log(document.nodeType);//9
+</script>
+</body>
+</html>

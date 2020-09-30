@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  //工厂模式：通过创建封装函数实现一批相似的对象
+  function createObj(name,age){
+    var obj=new Object()//常规创建：new
+    obj.name=name
+    obj.age=age
+    obj.fn=function () {
+      return this.name+this.age
+    }
+    return obj
+  }
+  var obj1=createObj('战三',6)
+  var obj2=createObj('李四',23)
+  console.log(obj1,obj2)
+
+
+</script>
+</body>
+</html>

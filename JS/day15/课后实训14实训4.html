@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>continue求1-100之间不能被7整除的数的和</title>
+</head>
+<body>
+<script>
+  for (var i=1,s=0;i<=100;i++){
+    if(i%7==0){
+      continue;
+    }else {
+      s=s+i;
+    }
+  }
+  document.write('1-100之间不能被7整除的数的和是：'+s);
+</script>
+</body>
+</html>

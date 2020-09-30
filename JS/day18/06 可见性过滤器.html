@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>可见性过滤器</title>
+		<style>
+			.box1{
+  display: none;
+}
+  </style>
+	</head>
+	<body>
+		<div class="box1">box1</div>
+		<div class="box2">box2</div>
+		<p>pppppppp</p>
+		<input type="hidden" value="这是要上传的值">
+		<input type="button" value="提交">
+	</body>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script>
+		// ：hidden  选择display：none或隐藏文本域
+		// $('div:hidden').css('display','block')
+		// $('input:hidden').attr('type','text')//找到隐藏的,修改attr属性
+
+
+		// ：visible    选择display：block的元素
+		$('div:visible').css('color', 'red')
+	</script>
+</html>

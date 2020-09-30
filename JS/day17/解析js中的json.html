@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  var students=[
+    {
+      name:'张三',
+      age:18,
+      tel:13541241561
+    },
+    {
+      name:'李四',
+      age:19,
+      tel:1355123828
+    },
+    {
+      name:'王五',
+      age:17,
+      tel:15837264728
+    }
+  ];
+  //解析json，直接访问json存储的对象即可
+  console.log(students);
+
+//若为字符串类型（只能显示在一行上）,可用“\”续行符连接
+  var students1="[\
+    {\
+      name:'张三',\
+      age:18,\
+      tel:13541241561\
+    },\
+    {\
+      name:'李四',\
+      age:19,\
+      tel:1355123828\
+    },\
+    {\
+      name:'王五',\
+      age:17,\
+      tel:15837264728\
+    }\
+  ]";
+  console.log(students1);
+
+//具有JSON格式的字符串
+  var students2='[\
+    {\
+      "name":"张三",\
+      "age":18,\
+      "tel:13541241561\
+    },\
+    {\
+      "name:"李四",\
+      "age:19,\
+      "tel:1355123828\
+    },\
+    {\
+      "name:"王五",\
+      "age":17,\
+      "tel":15837264728\
+    }\
+  ]';
+  // console.log(students2);
+  //如下用JSON.parse（）将具有json格式的字符串转换为JavaScriptjson的字符串
+  console.log(JSON.parse(students2));
+  console.log(JSON.stringify(students1));
+</script>
+</body>
+</html>

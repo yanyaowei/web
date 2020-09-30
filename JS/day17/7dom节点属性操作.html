@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>dom节点属性操作</title>
+  <style>
+    img{
+      width: 200px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">切换图片</button>
+<img src="../day17/yellowman.jpg" data-src="../day17/flower.png" alt="小黄人图片">
+<img data-src="../day17/flower.png" alt="花儿" src="">
+<script>
+  // 1、获取属性值
+  // DOM节点.属性名 //不能获取用户自定义属性的值
+  // DOM节点.getAttribute(属性名)  //获取所有属性（包括自定义的）的值
+  // console.log(document.getElementsByTagName('img')[0].src);
+  // console.log(document.getElementsByTagName('img')[0].alt);
+  // console.log(document.getElementsByTagName('img')[0].data-src);//用户自定义前面加data-，但是这里不能获取自定义的属性值
+
+  // console.log(document.getElementsByTagName('img')[0].getAttribute('src'));
+  // console.log(document.getElementsByTagName('img')[0].getAttribute('data-src'));
+
+document.getElementsByTagName('img');
+var img=document.getElementsByTagName('img');
+// console.log(img[0].src);
+// console.log(img[0].alt);
+// console.log(img[0].getAttribute('src'));
+// console.log(img[0].getAttribute('data-src'));
+
+  //2、设置属性值
+  //DOM节点.属性名= //不能获取用户自定义属性的值
+  // DOM节点.getAttribute(属性名)  //获取所有属性（包括自定义的）的值
+img[1].src='../day17/flower.png';
+document.getElementById('btn').onclick=function () {//点击事件
+  var url=img[0].getAttribute('data-src');
+  img[0].setAttribute('src',url);
+}
+  //3、删除属性值:  DOM节点.属性值='';
+  // img[1].src='';
+  img[1].removeAttribute('src');
+
+</script>
+</body>
+</html>

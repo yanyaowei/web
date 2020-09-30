@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>属性过滤器</title>
+</head>
+<body>
+<p title="pad">pppppppp</p>
+<p title="axp">aaaaa</p>
+<p title="asdf" id="p1">p1</p>
+</body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+  // [attr]   获取含有指定属性的元素
+  //   $('p[title]').css('color','red');
+
+    // [attr=value]   获取属性值为value的元素
+   // $('p[title=ppp]').css('color','red');
+
+    // [attr!=value]   获取属性值不为value的元素
+  // $('p[title!=ppp]').css('color','red');
+
+    // [attr^=value]   获取属性值以value开头的元素
+    // $('p[title^=p]').css('color','red');
+
+    // [attr$=value]	获取属性值以value结尾的元素
+  // $('p[title$=p]').css('color','red');
+
+    // [attr*=value]  获取属性值含有value的元素
+    //   $('p[title*=x]').css('color','red');
+
+
+  // 【attr1】【attr2 】【attr3】  获取含有指定多个属性的元素
+      $('p[title][id]').css('color','yellow');//即含有又含有的那种
+</script>
+</html>

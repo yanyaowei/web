@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>获取天气情况</title>
+</head>
+<body>
+<div class="weather">
+
+</div>
+</body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+  $.ajax({
+    url:'http://www.tianqiapi.com/api',
+    data:{
+      version:'v9',
+      appid:'23035354',
+      appsecret:'8YvlPNrz',
+      city: '拉萨'
+    }
+  }).then(function(res){
+    console.log(res);
+    $('.weather').append('<span>城市：' + res.city + '</span>&nbsp;&nbsp;<span>空气质量：' +
+      res.data[0].air_level +'</span>&nbsp;&nbsp;<span>实时温度：' + res.data[0].tem +'度</span>')
+  })
+</script>
+</html>

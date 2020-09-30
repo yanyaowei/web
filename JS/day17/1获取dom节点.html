@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>获取DOM节点</title>
+</head>
+<body>
+<div id="box">box</div>
+<p>01</p>
+<p>02</p>
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+<input type="text" name="userName">
+<script>
+
+  //通过ID名获取:返回某个节点
+var box=document.getElementById('box');
+  console.log(box);
+  box.style.color='red';
+
+  //通过标签名获取：返回节点数组，即使只有一个
+  var pall=document.getElementsByTagName('p');
+  console.log(pall);
+  pall[0].style.fontSize='20px';//注意这里的fontSize的s大写并且没有-连接符
+  pall[0].style.fontSize='20px';//注意加引号
+
+  //通过标签的name值获取节点：返回节点数组
+  var names=document.getElementsByName('userName');
+  console.log(names);
+  names[0].value='张三';
+
+  //下面的方法在IE6,7,8里不能使用
+  //通过class值获取节点：返回节点数组
+  var boxes=document.getElementsByClassName('box');
+  console.log(boxes);
+ for(var i in boxes){
+   boxes[i].innerHTML='hahahaha';//整体操作
+ }
+  //根据选择器返回找到其中的一个
+  console.log(document.querySelector('p'));//返回标签的
+  console.log(document.querySelector('.box'));//返回类
+  console.log(document.querySelector('#box'));//返回ID
+
+  //根据选择器返回找到的结果集，是个节点数组;id是唯一的，所以没法用querySelectorAll
+  console.log(document.querySelectorAll('p'));//返回标签数组
+  console.log(document.querySelectorAll('.box'));//返回类数组
+
+</script>
+</body>
+</html>

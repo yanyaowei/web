@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>认识JQ</title>
+</head>
+<body>
+<div class="box"></div>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.js"></script>
+<script>
+  console.dir($);
+  $('.box')
+    .html('欢迎来到JQ事件！')
+    .css('color','red')
+    .hover(function () {
+    $(this).fadeOut(2000);//使用淡出效果来隐藏一个元素,时间2s
+  })
+</script>
+</html>

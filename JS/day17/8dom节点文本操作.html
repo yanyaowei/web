@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>节点文本操作</title>
+  <style>
+    img{
+      width: 100px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<button id="btn"><span>这是</span>切换图片</button>
+
+<form action="">
+  <input name="txt" type="text" value="这是表单的文本框">
+  <input type="radio" name="sex" value="1">男
+  <input type="radio" name="sex" value="0">女
+  <input type="checkbox" name="hobby" value="1">我
+  <input type="checkbox" name="hobby" value="2">爱
+  <input type="checkbox" name="hobby" value="3">学
+  <input type="checkbox" name="hobby" value="4">习
+  <input type="checkbox" name="hobby" value="5">哈
+</form>
+
+<img src="../day17/yellowman.jpg" data-src="../day17/flower.png" alt="小黄人图片">
+<img data-src="../day17/flower.png" alt="花儿" src="">
+
+<br><input type="button" value="提交" id="ok">
+<script>
+  //1、获取文本内容
+  //节点.innerHTML
+  //获取节点下的所有内容包含了标签（用于获取双标签的文本内容）
+  //因为单标签例如img没有文本内容
+  console.log(document.getElementById('btn').innerHTML);//把文本内容全部显示，包含span也会把span标签显示出来
+  // console.log(document.getElementById('img')[0].innerHTML);//错误方式，因为img是单标签，没有文本内容
+
+  console.log(document.getElementById('btn').innerText);//把文本内容全部显示，自动把文本中的标签过滤掉
+
+  console.log(document.getElementsByName('txt')[0].value);
+  console.log(document.forms[0].txt.value);
+  console.log(document.querySelector('input').value);
+
+  document.forms[0].txt.onblur=function () {//onblur:事件（失焦时触发该事件）
+    console.log(this.value);//这里的this代表的是当前操作的对象
+    if (this.value==='aaa'){
+      alert('欢迎您！');
+      location.href='https://www.baidu.com';//这里的location.href可用于动态跳转（可修改）
+    } else {
+      alert('抱歉，请重新输入！');
+    }
+  }
+  console.log('value:'+document.forms[0].txt.getAttribute('value'));
+  //2.设置文本
+// i解析标签
+  document.getElementById('btn').innerHTML='aaa';
+                   //下面这个会自动解析标签
+  document.getElementById('btn').innerHTML='这是一个<strong>命令按钮</strong>';
+                   //下面这个不会自动解析标签
+  document.getElementById('btn').innerText='这是一个<strong>命令按钮</strong>';
+  // ii单选框
+  // document.forms[0].sex.value=1;
+  document.forms[0].sex.value=0;//设置前面的单选按钮被选中
+  // iii复选框
+  // document.forms[0].hobby.value='我';//不能通过value设置复选框的某项被选中
+  // 通过以下方式对复选框的内容选择 （checked属性），给true标识选择，反之不选
+  document.forms[0].hobby[0].checked=true;
+  document.forms[0].hobby[1].checked=true;
+// iiii单击”提交“按钮获取所有复选框被选中的值
+  document.querySelector('#ok').onclick=function () {
+  var chks=document.forms[0].hobby;//获取所有的复选框dom
+  var arr=[ ];
+  for (var i in chks){
+    if (chks[i].checked){//如果被选中
+      arr.push(chks[i].value);
+    }
+  }
+    console.log(arr);
+  }
+  // iiiii取消和修改
+  document.forms[0].hobby[0].setAttribute('checked','vkjdfakf')//主要是要checked这个属性值
+  // document.forms[0].hobby[0].setAttribute('checked',false)//不能用这种方式
+  document.forms[0].hobby[0].removeAttribute('checked');
+  //上面这个前提是前面加了checked属性，才能用这个取消选√。否则用下面这个
+  document.forms[0].hobby[1].checked=false;
+
+  document.forms[0].hobby[0].setAttribute('value','good');//修改value的值
+// iiiiii删除（清空）
+  //直接给属性赋值空：
+  // document.getElementById('btn').innerText='';
+  document.forms[0].hobby[0].value='清空后的值';
+  //直接把属性移除了：
+  // document.forms[0].hobby[0].removeAttribute('value');
+</script>
+</body>
+</html>

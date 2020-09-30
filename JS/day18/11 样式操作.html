@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>样式操作</title>
+  <style>
+    .red{
+      color: red;
+    }
+    .bgc{
+      background-color: gray;
+    }
+  </style>
+</head>
+<body>
+<p>pppppppppp</p>
+</body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+//   ##### 3、元素样式操作
+//
+//   1）设置样式
+//
+//   css(‘属性名’，‘属性值’)     设置一个样式
+//     $('p').css('color','red');
+    // $('p').css('color','red').css('background','black');
+
+
+
+//   css（{‘属性名1’：‘属性值1’，‘属性名2’：‘属性值2’,..})
+//      $('p').css({
+//          'color':'red',
+//          'background':'black'
+//       });
+//   2)操作类
+//
+//   ###### 1.添加类
+//
+//   addClass（‘类名’）
+//       $('p').addClass('red');//已经表明是加类，不用加点了
+// 或：
+//
+// addClass（‘类名1 类名2   ...’）
+     $('p').addClass('red').addClass('bgc');
+//      $('p').addClass('red bgc');//中间空格
+
+// ###### 2、删除类
+//
+//   removeClass（‘类名’）
+//         $('p').removeClass('red');
+        $('p').removeClass();//全部删除的意思
+// 或
+//
+//   removeClass（‘类名1 类名2   ...’）
+//       $('p').removeClass('red bgc');
+
+</script>
+</html>

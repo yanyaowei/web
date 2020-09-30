@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>文本内容操作</title>
+	</head>
+	<body>
+		<p><span>内容</span></p>
+		<input type="text" value="32131441">
+		<input type="text" value="36781">
+	</body>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script>
+		// html()   可以操作标签
+		// console.log($('p').html());
+
+		// text()    只能操作文本内容，不操作标签
+		console.log($('p').text());
+
+		// val()    只能用于表单组件
+		// console.log($(':text').val());
+		// console.log($(':text').eq(1).val());
+
+
+		// 修改
+		// $('p').html('<strong>aaaaaa</strong>')//会解析strong，并且展示格式
+		$('p').text('<strong>aaaaaa</strong>') //不会解析strong标签
+
+
+		// $('p').html('')
+		// $('p').text('')
+		//修改
+		// $(':text').val('你好')
+
+		//删除（付给他空值）
+		// $(':text').eq(1).val('')
+	</script>
+</html>

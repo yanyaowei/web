@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04 动画中的显示隐藏切换</title>
+  <style>
+    .box{
+      width: 400px;
+      height: 300px;
+      background-color: #ff501d;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<button>显示</button>
+<button>隐藏</button>
+<button>切换</button>
+<div class="box">box</div>
+</body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+//   ##### 1）显示/隐藏/切换
+// show()		显示
+  $('button').eq(0).click(function () {
+    // $('.box').show()//直接显示
+    // $('.box').show(3000)//3000毫秒慢慢显示
+    // $('.box').show('fast')//200ms慢慢显示
+    $('.box').show('normal')//400ms慢慢显示
+    // $('.box').show('')//这种也是normal，400ms慢慢显示
+    // $('.box').show('slow')//600ms慢慢显示
+  });
+
+//   hide()		隐藏
+    $('button').eq(1).click(function () {
+      // $('.box').hide()
+      // $('.box').hide(3000)//3000毫秒慢慢隐藏
+      // $('.box').hide('fast')//200ms慢慢隐藏
+      $('.box').hide('normal')//400ms慢慢隐藏
+      // $('.box').hide('')//这种也是normal，400ms慢慢隐藏
+      // $('.box').hide('slow')//600ms慢慢隐藏
+    });
+
+//   toggle()
+    $('button:eq(2)').click(function () {
+      // $('.box').toggle('normal')
+      $('.box').toggle(400)
+    })
+
+
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>层次选择器</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<span>span1</span>
+			<div class="box">
+				<span>span2</span>
+			</div>
+		</div>
+		<p>111</p>
+		<p>222</p>
+		<p>333</p>
+		<div class="test">test</div>
+	</body>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.1/jquery.js"></script>
+	<script>
+		$(function() {
+			// $('.wrapper span').html('这是span1新内容')//1、选择所有的子元素，改变了span的内容
+			$('.wrapper>span').html('这是span1新内容') //2、只选择了.wrapper下面的第一个子元素
+
+			// $('.wrapper+p').css('color','red')//3、选择兄弟紧挨着的第一个相邻元素
+			// $('.wrapper+.test').css('color','red')//虽然.test是他的对应兄弟元素，但是不是紧挨着的，所以选择不到
+
+
+			//4、选择所有兄弟元素
+			// $('.wrapper~p').css('color','red')
+			$('.wrapper~.test').css('color', 'red')
+
+		})
+	</script>
+</html>

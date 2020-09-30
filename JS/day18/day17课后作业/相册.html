@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>相册</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .wrapper{
+      width: 600px;
+      margin: 50px auto 0;
+      border: 1px solid #aaa;
+      padding: 20px;
+    }
+    .wrapper>img{
+      width: 100%;
+    }
+    h2{
+      margin-bottom: 20px;
+    }
+    ul li{
+      list-style-type: none;
+      float: left;
+      margin-right: 10px;
+    }
+    ul li:last-child{
+      margin: 0;
+    }
+    ul li img {
+      width: 142px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <h2>好看相册</h2>
+  <hr><!--加个分割线-->
+    <ul>
+      <li><img class="photo-item" src="images/05-1-small.jpg"></li>
+      <li><img class="photo-item" src="images/05-2-small.jpg"></li>
+      <li><img class="photo-item" src="images/05-3-small.jpg"></li>
+      <li><img class="photo-item" src="images/05-4-small.jpg"></li>
+    </ul>
+  <img class="large-img" src="images/05-placeholder.png">
+  <p>请选择图片</p>
+</div>
+</body>
+<script>
+  var img=document.querySelector('.large-img');//获取下面的展示区
+  var items=document.querySelectorAll('.photo-item');//获取上面的小图
+  var p=document.querySelector('p');//获取p标签
+  for (var i=0;i<items.length;i++) {
+    items[i].onmouseenter=function () {
+      var srce=this.getAttribute('src').replace('-small','');//将small删除则获取的是大图了
+      img.setAttribute('src',srce);
+
+      var idx=srce.substr(10,1);//★拿下标为10开始的地方拿一个字符串，相当于这里在拿images/05-1中的1
+      var str='';
+      switch (idx) {
+        case '1': str = '美女1';break;
+        case '2': str = '美女2';break;
+        case '3': str = '美女3';break;
+        case '4': str = '美女4';
+      }
+      p.innerText=str;
+    }
+  }
+</script>
+</html>

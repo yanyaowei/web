@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>animate动画</title>
+  <style>
+    .box{
+      width: 400px;
+      height: 300px;
+      background-color: #ff501d;
+      /*display: none;*/
+    }
+  </style>
+</head>
+<body>
+<button>演示动画</button>
+<div class="box">box</div>
+</body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+  $('button').click(function () {
+    $('.box').animate({
+      width:'100px',
+      height:'100px'
+      // backgroundColor:'blue'或(X)background:'red'(X)//颜色无法作用在这个动画里，说明animate对颜色无效
+    },3000)
+  })
+</script>
+</html>

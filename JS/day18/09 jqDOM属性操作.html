@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>属性操作</title>
+</head>
+<body>
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599451823942&di=e81b40710dc5fd264a1c9e8f0a92a3ec&imgtype=0&src=http%3A%2F%2Fpic.9ht.com%2Fup%2F2014-8%2F201482691356.jpg" alt="百度云">
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599451998936&di=328117b6e9c5e3de479104b9a6e3c425&imgtype=0&src=http%3A%2F%2Ffile01.16sucai.com%2Fd%2Ffile%2F2013%2F0617%2F20130617104626550.jpg" alt="">
+</body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+//   1）获取属性值
+//   attr（属性名）
+    console.log($('img').eq(0).attr('src'))
+
+// 2）设置属性
+$('img').eq(0).attr('src','https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599452109153&di=0543b9f32b7d3041191deda3235790c6&imgtype=0&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fzhidao%2Fwh%3D600%2C800%2Fsign%3D503633329a22720e7b9beafc4bfb267e%2Fb219ebc4b74543a9dbe76c9c1c178a82b80114e5.jpg')
+//   attr（属性名，属性值）
+//     $('img').removeAttr('src')
+// 3）删除属性
+
+//   removeAttr（属性名）
+</script>
+</html>
