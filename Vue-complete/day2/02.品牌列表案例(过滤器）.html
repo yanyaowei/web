@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <div>
+      <h3>添加品牌</h3>
+      <label>
+        Id:
+        <input type="text"  v-model="id">
+      </label>
+      <label>
+        Name:
+        <input type="text" v-model="name">
+      </label>
+    <label>
+        关键字:
+        <input type="text" v-model="keywords">
+      </label>
+    <!--在Vue中使用事件绑定机制为元素指定处理函数的时候，如果加了小括号就可以给函数传参-->
+      <input type="button" value="添加" @click="add">
+  </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Ctime</th>
+          <th>Operation</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr v-for="item in search(keywords)" :key="item.id">
+        <td>{{ item.id }}</td>
+        <td v-text="item.name"></td>
+        <td>{{item.ctime}}</td>
+        <td><a href="" @click.prevent="del(item.id)">删除</a></td>
+      </tr>
+      </tbody>
+    </table>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var vm=new Vue({
+    el:'#app',
+    data:{
+      id:'',
+      name:'',
+      keywords:'',
+        list:[
+          {id:1,name:'奔驰',ctime:new Date()},
+          {id:2,name:'宝马',ctime:new Date()}
+        ]
+    },
+    methods:{
+        add(){//添加的方法
+          // console.log("OK")
+          //1、获取ID和Name（直接从Data中获取）
+          //2、组织处一个对象
+          //3、把这个对象调用数组的相关方法，添加到当前data的list中
+          //4、注意：在Vue中已经实现了数据双向绑定，每当我们修改了data
+          // 中的数据，Vue会默认监听数据的改动，自动把最新的数据应用到界面上
+          //5、当我们意识到上面第四部时，就已经入门Vue了，更多的是在进行VM中
+          // Model数据的操作，同时在操作Model数据的时候，指定业务逻辑的操作
+
+          var car={id:this.id,name:this.name,ctime:new Date()};
+          this.list.push(car);
+          this.id='';
+          this.name='';
+        },
+      del(id){
+          // 如何根据ID找到要删除的一项的索引
+        // 找到后调用数组的splice方法
+        // this.list.some((item,i)=>{
+        //   if(item.id== id){
+        //     this.list.splice(i,1)
+        //     return true;
+        //
+        //   }
+        // })
+
+        var index=this.list.findIndex(item=>{
+          if(item.id==id){
+            return true;
+          }
+        })
+        this.list.splice(index,1)
+        // console.log(index)
+      },
+      search(keywords){
+        //   var newList=[];
+        //   this.list.forEach(item=>{
+        //     if(item.name.indexOf(keywords)!=-1){
+        //       newList.push(item)
+        //     }
+        //   })
+        // return newList
+
+        //注意：forEach some filter findIndex都属于数组的新方法
+        // 都会对数组的每一项进行遍历执行相关操作
+        return newList=this.list.filter(item=>{
+          //ES6中为字符串提供了一个新方法，叫做string.prototype.includes('要包含的字符串'
+          if(item.name.includes(keywords)){
+            return item
+          }
+        })
+      }
+    }
+  });
+
+  // Vue.filter('过滤器的名称',function (data) {
+  //   return data +'123';
+  // })
+</script>
+</body>
+</html>
