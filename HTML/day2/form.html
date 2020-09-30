@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--<form name="stuInfo" action="test.php" method="get">-->
+    <!--<input type="text" name="userName" placeholder="姓名">-->
+    <!--<input type="submit">-->
+    <!--</form>-->
+<form method="get" action="mom.php">
+    <input type="text"><br/>
+    <input type="text" placeholder="请输入文字" value="100" readonly><br/>
+    <input type="text" placeholder="请输入文字"  minlength="5" maxlength="10"><br/>
+
+    <input type="password" ><br>
+  <input type="radio"  name="god">a
+    <input type="radio" name="god">b
+    <input type="radio" name="bad">1
+    <input type="radio" name="bad" >2
+    <input type="radio" name="bad" >3
+<br>
+    <input type="checkbox" name="q" checked>1
+    <input type="checkbox" name="q" checked>2
+    <input type="checkbox" name="q">3
+<input type="file"><br>
+    <input type="button" value="登录" disable>
+    <input type="image" src="../image/qq.png" title="QQ图标">
+    <input type="submit">
+    <input type="reset" value="取消"><br>
+
+    <textarea required name="my" placeholder="写出您的想法在评论区吧" cols="30" rows="10"></textarea>
+    <br>
+    <label for="sex">性别：</label>
+    <select name="select"  id="sex" multiple size="3">
+        <option value="male">man</option>
+        <option value="female">woman</option>
+
+    </select>
+    <button>提交</button>
+</form>
+<button id="ok">确认</button>
+</body>
+</html>
