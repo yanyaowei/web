@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>v-text</title>
+</head>
+<body>
+<div id="app">
+  <input type="button" value="v-on指令" v-on:click="doIt">
+  <input type="button" value="v-on简写" @click="doIt">
+  <input type="button" value="双击事件" @dblclick="doIt">
+  <h2 @click="changeFood">{{food}}</h2>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app=new Vue({
+    el:"#app",
+    data:{
+      food:"西兰花"
+    },
+    methods:{
+      doIt:function () {
+        alert('做it');
+      },
+      changeFood:function () {
+        console.log(this.food);//事件点击后发生会输出西兰花
+        this.food+="好吃的不得了！"//事件点击发生后会在h2处一直添加好吃得不得了！
+      }
+    },
+  })
+</script>
+</html>

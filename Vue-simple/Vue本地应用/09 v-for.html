@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>v-for</title>
+</head>
+<body>
+<div id="app">
+  <input type="button" value="添加数据" @click="add">
+  <input type="button" value="移除数据" @click="remove">
+  <ul>
+    <li v-for="(item,index) in arr">
+      {{ index+1 }}小巍在哪儿：{{ item }}
+    </li>
+  </ul>
+  <h2 v-for="item in games" v-bind:title="item.name">
+   你爱玩的游戏有： {{ item.name }}
+  </h2>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app=new Vue({
+    el:"#app",
+    data:{
+      arr:["北京","上海","成都"],
+      games:[
+        {name:"王者荣耀"},
+        {name:"和平精英"}
+      ]
+    },
+    methods:{
+      add:function () {
+        this.games.push({name:"奇迹暖暖"})//把指定的值添加到数组后的新长度
+      },
+      remove:function () {
+        this.games.shift();//shift() 方法用于把数组的第一个元素从其中删除，并返回第一个元素的值
+      }
+    }
+  })
+</script>
+</html>

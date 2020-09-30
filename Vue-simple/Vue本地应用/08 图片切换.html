@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="mask">
+  <!--左箭头-->
+  <a href="javascript:void(0)" v-show="index!=0" @click="prev" class="left">
+  <img src="direction-left.png" alt="">
+  </a>
+  <!--图片-->
+  <img :src="imgArr[index]" alt="">
+  <!--右箭头-->
+  <a href="javascript:void(0)" v-show="index<imgArr.length-1" @click="next" class="right">
+    <img src="direction-right.png" alt="">
+  </a>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app=new Vue({
+    el:"#mask",
+    data:{
+      imgArr:[
+        "1.png",
+        "2.png",
+        "3.png",
+        "4.png",
+        "5.png",
+        "6.png",
+      ],
+      index:0
+    },
+    methods:{
+      prev:function () {
+        this.index--;
+      },
+      next:function () {
+        this.index++;
+      }
+    }
+  })
+</script>
+</html>

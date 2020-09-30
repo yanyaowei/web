@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>记事本</title>
+</head>
+<body>
+<!--主体区域-->
+<section id="todoapp">
+       <!--输入框-->
+  <header class="header">
+    <h1>小巍的记事本</h1>
+    <input v-model="inputValue" @keyup.enter="add" autofocus="autofocus" autocomplete="off"
+           placeholder="请输入记事内容" class="new-todo">
+    <!--autofocus 属性规定当页面加载时 input 元素应该自动获得焦点。-->
+    <!--autocomplete 属性规定输入字段是否应该启用自动完成功能。  自动完成允许浏览器预测对字段的输入。当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选项。-->
+  </header>
+
+      <!--列表区域-->
+  <section class="main">
+    <ul class="tode-list">
+      <li class="todo" v-for="(item,index) in list">
+        <div class="view">
+          <span class="index">{{ index+1 }}</span>
+          <label >{{ item }}</label>
+          <button class="destory" @click="remove(index)"></button>
+        </div>
+      </li>
+    </ul>
+  </section>
+      <!--统计和清空-->
+  <footer class="footer">
+      span
+  </footer>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app=new Vue({
+    el:"#todoapp",
+    data:{
+      list:["写代码","吃饭饭","睡觉觉"],
+      inputValue:"好好学习，天天向上"
+    },
+    methods:{
+      add:function () {
+        this.list.push(this.inputValue);
+      },
+      remove:function (index) {
+        console.log(index);
+        this.list.splic(index,1);//删除哪个元素，删几个
+      }
+    }
+  })
+</script>
+</body>
+</html>
