@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <!--contentEditable可编辑-->
+      <p contenteditable="true">contentEditable</p>
+             <!--hidden隐藏-->
+        <div class="box">b1</div>
+        <div class="box" hidden>b2</div>
+        <div class="box">b3</div>
+<!--data-*自定义属性-->
+        <p data-id="001">内容</p>
+<!--multiple多选-->
+        <select multiple>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+<!--require提交前必须输入值结合提交按钮-->
+        <form action="#">
+            <input type="text" required placeholder="请输入用户名"><br>
+            <input type="submit">
+        </form>
+<!--pattern-->
+        <form action="#">
+            <input type="text" pattern="[A-Za-z0-9]{4,6}" placeholder="请输入用户名"><br>
+            <input type="submit">
+        </form>
+</body>
+</html>

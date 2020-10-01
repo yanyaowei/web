@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        dialog{
+            position: relative;
+        }
+        dialog span{
+            position: absolute;
+            right: 5px;
+            top:5px;
+            cursor: pointer;
+        }
+        figure{
+            width: 400px;
+            text-align: center;
+        }
+        figure img{
+            width: 100%;
+        }
+        figure p{
+            margin-top: -4px;
+        }
+    </style>
+</head>
+<body>
+<p>干得<mark>真</mark>漂亮</p>
+<details>
+    <summary>  描述与摘要 </summary>
+        <h2>标题</h2>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+</details>
+<!--定义度量衡-->
+<meter value="120" min="80" max="200"></meter>公里/小时
+<!--进度条-->
+<p>任务已完成：</p><progress value="100" min="10" max="130"></progress>
+<!--对话框和窗口-->
+<dialog open>
+    <span>&times;</span>
+    <h2>大前端</h2>
+    <ul>
+        <li>好人1</li>
+        <li>好人2</li>
+        <li>好人3</li>
+    </ul>
+</dialog>
+<!--元素组合-->
+<figure>
+    <h4>花</h4>
+    <img src="向日葵.jpg" alt="向日葵">
+    <p>花儿朵朵开</p>
+</figure>
+</body>
+</html>

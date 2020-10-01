@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img,a,audio,video{
+    border:0;
+    outline:none;
+}
+a{
+    text-decoration: none;
+    color: aqua;
+}
+li{
+    list-style-type: none;
+}
+body{
+    /*font-family: "Bell MT";*/
+    font-size: 14px;
+    background: url(siteBackground.jpg);
+    padding-top: 10px;
+    color: #efffc1
+}
+.container{
+    width: 100px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+aside{
+    float: left;
+    width: 320px;
+}
+.logo{
+    background: url(logoBackground.png) no-repeat;
+    float: left;
+    width: 206px;
+    height: 205px;
+}
+.logo h1{
+    font-size: 60px;
+    /*font-family: "Wingdings 3";*/
+    line-height: 20px;
+    padding: 40px 0 0 43px;
+}
+.logo h1 a{
+    color: red;
+    text-shadow: 1px 1px 1px #ffffff;
+
+}
+.navlist{
+    padding-right: 40px;
+    text-align: center;
+}
+.navlist li{
+    padding: 5px 0;
+    font-family: "Fira Code";
+    text-shadow: 1px 1px 1px #fff;
+    font-size: 36px;
+}
+.navlist li a{
+    color: #ac8829;
+}
+.navlist li a:hover{
+    color: #452200;
+}
+.navlist li a.active{
+
+}
+main{
+    float: right;
+}
+main article{
+    width: 193px;
+    float: left;
+    margin: 0 57px 25px 0;
+}
+main h2{
+    font-size: 30px;
+    padding: 10px 0;
+    color: #ff1d33;
+    text-shadow: 1px 1px 2px #fff;
+}

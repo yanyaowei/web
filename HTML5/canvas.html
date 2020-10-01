@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+
+</head>
+<body>
+<canvas width="400" height="200" style="background: yellow"></canvas>
+</body>
+<script>
+    var canvas=document.getElementsByTagName('canvas')[0];
+    var ctx=canvas.getContext('2d');
+    ctx.fillStyle='#ff0000';
+    ctx.fillRect(50,70,200,100);
+</script>
+</html>
