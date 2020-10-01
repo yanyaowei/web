@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景属性</title>
+    <style>
+        p{
+            width: 500px;
+            height: 300px;
+            border: 10px solid #f00;
+            padding: 10px;
+            margin: 100px auto;
+            /*background: url(border.png) ;*/
+            -webkit-background-size: contain;
+            background-image: url(bg.png);
+            background-repeat: no-repeat;
+            -webkit-background-origin: padding-box;
+            background-origin: padding-box;
+
+            /*-webkit-background-origin: border-box;*/
+            /*background-origin: border-box;*/
+
+            /*-webkit-background-origin: content-box;*/
+            /*background-origin: content-box;*/
+        }
+    </style>
+</head>
+<body>
+    <p>body { background-image:url('bgimage.gif'); background-repeat:no-repeat; background-attachment:fixed; background-position:center</p>
+</body>
+</html>

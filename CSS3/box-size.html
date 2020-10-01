@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+.container{
+    width: 400px;
+    height: 200px;
+    border: 1px solid #f00;
+}
+        .box{
+            width: 200px;
+            height: 200px;
+            float: left;
+            border: 1px solid #00f;
+            padding: 20px;
+            /*内容的实际宽度为200，（文本+边框）内容实际宽度200*/
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+
+/*默认*/
+            /*-webkit-box-sizing: content-box;*/
+            /*-moz-box-sizing: content-box;*/
+            /*box-sizing: content-box;*/
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+</body>
+</html>

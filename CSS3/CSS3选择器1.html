@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*p[class*=content]{*/
+            /*color: red;*/
+        /*}*/
+        /*:root{*/
+            /*background-color: rgba(0, 0, 0, 0.25);*/
+        /*}*/
+        /*:nth-child(n)*/
+        /*:*/
+        /*p:nth-last-of-type(4){*/
+            /*color: yellow;*/
+        /*}*/
+        /*:last-child*/
+        p:only-child{
+            width: 200px;
+            border: 1px solid #ff0000;
+        }
+        /*p:only-of-type{*/
+            /*width: 200px;*/
+            /*background-color: #ff836f;*/
+        /*}*/
+        div:empty{
+            width: 200px;
+            height: 100px;
+            background-color: #ffc69c;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+      <p class="content p1">段落1</p>
+      <p class="content">段落2</p>
+      <div class="hak">div</div>
+      <p class="content">段落3</p>
+      <p class="content p4">段落4</p>
+      <p class="content p5">段落5</p>
+
+      <div><p>ff</p><div>gg</div></div>
+      <div><p>hh</p></div>
+      <div><p>hh</p><p>gg</p></div>
+
+      <div class="test"></div>
+  </div>
+</body>
+</html>

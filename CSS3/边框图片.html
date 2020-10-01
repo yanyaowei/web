@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边框图片</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            border: 10px solid transparent;
+
+        }
+        .div1{
+            -webkit-border-image: url(border.png) 10 round;
+            -moz-border-image: url(border.png) 10 round;
+            -o-border-image: url(border.png) 10 round;
+            border-image: url(border.png) 10 round;/*铺满*/
+        }
+        .div2{
+            -webkit-border-image: url(border.png) 10 repeat;
+            -moz-border-image: url(border.png) 10 repeat;
+            -o-border-image: url(border.png) 10 repeat;
+            border-image: url(border.png) 10 repeat;/*平铺*/
+        }
+        .div3{
+            -webkit-border-image: url(border.png) 10 stretch;
+            -moz-border-image: url(border.png) 10 stretch;
+            -o-border-image: url(border.png) 10 stretch;
+            border-image: url(border.png) 10 stretch;/*拉伸*/
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+</body>
+</html>

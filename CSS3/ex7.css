@@ -1,0 +1,187 @@
+@font-face {
+    font-family: driodSans;
+    src: url("font/DroidSans.ttf") format("OpenType");
+}
+@font-face {
+    font-family: fontin-Bold;
+    src: url("font/Fontin-Bold.otf") format("TrueType");
+}
+@font-face {
+    font-family: economica-Regular-OTF;
+    src: url("font/Economica-Regular-OTF.otf") format("TrueType");
+}
+@font-face {
+    font-family: bEBAS___;
+    src: url("font/BEBAS___.ttf") format("OpenType");
+}
+*{
+     margin: 0;
+     padding: 0;
+ }
+body{
+    background: url(img/tbg.png) repeat;
+    font: 14px driodSans;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.container{
+    width: 950px;
+    margin: 0 auto;
+}
+header img{
+    margin: 10px 0 20px 20px;
+}
+nav{
+    background-color:#fff;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 2px #666;
+}
+nav .nav{
+    padding: 20px 0 20px 10px;
+}
+nav li{
+    display: inline-block;
+    padding: 0 15px;
+}
+nav li a{
+    color: #333;
+}
+nav li a:hover{
+    color: rgba(149, 149, 255, 0.21);
+    text-decoration: underline;
+}
+/*主体部分*/
+.content{
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 2px #666;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+/*banner海报部分*/
+.banner{
+    height: 350px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 2px solid #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding:100px 0 0 80px;
+    background: url(img/html5.png) no-repeat 350px top;
+}
+.banner h2{
+    font: 66px Economica-Regular-OTF;
+    margin-bottom: 40px;
+}
+.banner p{
+    font: 24px Economica-Regular-OTF;
+    width: 450px;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    margin-bottom: 60px;
+}
+.banner a{
+    font: 14px BEBAS___;
+    color: #000;
+    border: 8px solid #000;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    word-spacing: 5px;/*字间距*/
+}
+.banner a:hover{
+    color: #666;
+}
+/*左边内容*/
+.leftcontent{
+    float: left;
+    width: 670px;
+    clear: both;
+}
+.leftcontent .classic{
+    text-align: center;
+    width: 210px;
+    float: left;
+    clear: none;
+}
+.leftcontent .cl2{
+    margin: 0 12px;
+}
+.leftcontent .classic h3{
+    font-weight: normal;
+    padding: 20px 0 10px 20px;
+
+}
+.leftcontent .classic h4{
+    font-weight: normal;
+    font-size: 15px;
+    opacity: 0.7;
+    margin: 10px 0;
+}
+.leftcontent .classic img{
+    opacity: .5;
+    width: 100%;
+}
+.leftcontent .classic:hover img{
+    opacity: 1;
+}
+.leftcontent .classic p{
+    font-size: 13px;
+    opacity: 0.5;
+    line-height: 1.5em;
+}
+.leftcontent .classic:hover p{
+    opacity: 1;
+}
+.leftcontent .classic:hover h4{
+    opacity: 1;
+}
+/*右边部分*/
+.rightcontent{
+    float: right;
+    width: 220px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: #fff;
+    background: linear-gradient(top,#fff 0%,#f7f7f7 84%,#e8e8e8 100%);
+    margin-top: 10px;
+    border: 1px solid #eee;
+}
+.rightcontent h3{
+    font-family: driodSans;
+    font-weight: normal;
+    color:#fff;
+    padding: 8px 0 8px 15px;
+    background-color:#333;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+}
+.rightcontent ul{
+    margin-left: 10px;
+}
+.rightcontent ul li{
+    font: 12px driodSans;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    line-height: 1.5em;
+    margin: 5px 0 5px 10px;
+}
+.rightcontent ul li a{
+    opacity: 0.7;
+}
+.rightcontent ul li a:hover{
+    opacity: 1;
+}

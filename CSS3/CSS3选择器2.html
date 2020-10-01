@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>目标伪类</title>
+    <style>
+        /*p {*/
+            /*height: 10px;*/
+        /*}*/
+
+        /*:target {*/
+            /*color: red;*/
+        /*}*/
+        /*input:disabled{*/
+            /*background-color: #27c3ff;*/
+        /*}*/
+        /*input:enabled{*/
+            /*background-color: #87ffd6;*/
+        /*}*/
+        /*!*input:checked{*!*/
+            /*!*color: yellow;*!*/
+        /*!*}*!*/
+        /*::selection{*/
+            /*color: #d12fff;*/
+        /*}*/
+        /*.container :not(p){*/
+           /*color: #00f;*/
+        /*}*/
+
+        .div1~.div3{
+            color: #c1f7ff;
+        }
+    </style>
+</head>
+<body>
+<!--<a href="#jump1">跳转1</a>-->
+<!--<a href="#jump2">跳转2</a>-->
+<!--<a href="#jump3">跳转3</a><br><br><br><br><br><br><br><br><br><br>-->
+<!--<p id="jump1">这个是段落1的内容</p>-->
+<!--<p id="jump2">这个是段落2的内容</p>-->
+<!--<p id="jump3">这个是段落3的内容</p>-->
+
+<!--<form action="">-->
+    <!--<input type="text" disabled><br>-->
+    <!--<input type="text"><br>-->
+    <!--<input type="text"><br>-->
+    <!--<input type="checkbox"  name="face" checked>党员<br>-->
+    <!--<input type="checkbox" name="face" checked>团员<br>-->
+    <!--<input type="checkbox" name="face" checked>群众<br>-->
+
+    <!--<select>-->
+        <!--<option>开发</option>-->
+        <!--<option selected>好的</option>-->
+        <!--<option>恩</option>-->
+    <!--</select>-->
+
+<!--</form>-->
+<!--<div class="container">-->
+    <!--<p>sg</p>-->
+    <!--<p>jfh</p>-->
+    <!--<em>eee</em>-->
+    <!--<span>dhhfuue</span>-->
+<!--</div>-->
+<div class="test">
+    <div class="div1">div1</div>
+    <div class="div2">div2</div>
+    <div class="div3"><span>span</span>div3</div>
+</div>
+</body>
+</html>
