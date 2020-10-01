@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform-style</title>
+    <style>
+        .wrapper{
+            width: 200px;
+            height: 100px;
+            margin: 200px auto;
+        }
+        .div1,.div2{
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+        }
+        .div1{
+            background-color: #f00;
+            -webkit-transform: rotateY(60deg);
+            -moz-transform: rotateY(60deg);
+            -ms-transform: rotateY(60deg);
+            -o-transform: rotateY(60deg);
+            transform: rotateY(60deg);
+            /*加在父元素上，保留3D效果，默认不保留3D效果为flat*/
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+        .div2{
+            background-color: #0f0;
+            -webkit-transform: rotateY(80deg);
+            -moz-transform: rotateY(80deg);
+            -ms-transform: rotateY(80deg);
+            -o-transform: rotateY(80deg);
+            transform: rotateY(80deg);
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+<div class="div1">
+    <div class="div2">挖偶</div>
+</div>
+</div>
+</body>
+</html>

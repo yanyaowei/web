@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition过渡动画</title>
+    <style>
+        .box{
+            width: 100%;
+            height: 800px;
+            position: relative;
+            border: 1px solid #eee;
+        }
+        .demo{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            -webkit-transition: left 2s ease 2s,width 3s ease-in-out;
+            -moz-transition: left 2s ease 2s,width 3s ease-in-out;
+            -ms-transition: left 2s ease 2s,width 3s ease-in-out;
+            -o-transition: left 2s ease 2s,width 3s ease-in-out;
+            transition: left 2s ease 2s,width 3s ease-in-out;
+
+            /*transition-property: left;*/
+        }
+        .box:hover .demo{
+            left: 500px;
+            width: 300px;
+            -webkit-transform: rotate(30deg);
+            -moz-transform: rotate(30deg);
+            -ms-transform: rotate(30deg);
+            -o-transform: rotate(30deg);
+            transform: rotate(30deg);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="demo"></div>
+</div>
+</body>
+</html>

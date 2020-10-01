@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scale缩放</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #00f;
+            margin: 200px auto;
+            /*横向放大两倍，纵向缩小一半*/
+            -webkit-transform: scale(2,0.5);
+            -moz-transform: scale(2,0.5);
+            -ms-transform: scale(2,0.5);
+            -o-transform: scale(2,0.5);
+            transform: scale(2,0.5);
+
+            /*横纵都放大两倍*/
+            /*-webkit-transform: scale(2);*/
+            /*-moz-transform: scale(2);*/
+            /*-ms-transform: scale(2);*/
+            /*-o-transform: scale(2);*/
+            /*transform: scale(2);*/
+
+            /*仅纵向放大2倍，横向同理*/
+            /*-webkit-transform: scaleY(2);*/
+            /*-moz-transform: scaleY(2);*/
+            /*-ms-transform: scaleY(2);*/
+            /*-o-transform: scaleY(2);*/
+            /*transform: scaleY(2);*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

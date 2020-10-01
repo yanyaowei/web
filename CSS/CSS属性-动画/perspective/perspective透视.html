@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father{
+            position: relative;
+            height: 200px;
+            width: 200px;
+            padding: 10px;
+            margin: 200px auto;
+            border: 1px solid #ccc;
+            perspective: 150px;/*透视,注意加长度单位*/
+        }
+        .son{
+            width: 100px;
+            height: 50px;
+            padding: 50px;
+            position: absolute;
+            border: 1px solid #f00;
+            background-color: yellow;
+            -webkit-transform: rotateX(45deg);
+            -moz-transform: rotateX(45deg);
+            -ms-transform: rotateX(45deg);
+            -o-transform: rotateX(45deg);
+            transform: rotateX(45deg);
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    padding: 10px 0;
+    font-family: 微软雅黑;
+}
+.content{
+    width: 700px;
+    border: 1px solid #cccccc;
+    margin:10px auto;
+    padding: 25px 25px 0;
+    background-color: #cccccc;
+}
+h1{
+    font-size:30px;
+    margin: 25px 0 15px;
+    color: red;
+    font-family: 黑体;
+    text-align: center;
+}

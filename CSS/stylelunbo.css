@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+.carousel{
+    width: 1000px;
+    height: 300px;
+    margin: 0 auto;
+    background-color: #444444;
+    position: relative;
+    overflow: hidden;
+}
+.carousel-img{
+    width: 99999px;
+}
+
+.carousel-img img{
+    width: 1400px;
+    height: 300px;
+}
+.carousel-img li{
+    float: left;
+}
+.prev,.next{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top:50%;
+    margin-top: -16px;
+}
+.prev{
+    background-image: url(prev.png);
+    left:50px;
+}
+.next{
+    background-image: url(next.png);
+    right:50px;
+}
+.count{
+    width:1000px;
+    height: 10px;
+    position: absolute;
+    bottom:25px ;
+}
+.count ul{
+    width: 100px;
+    height: 20px;
+    margin: 0 auto;
+    /*background-color: #cccccc;*/
+}
+.count ul li{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: #666666;
+    float: left;
+    opacity: 0.8;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.count ul .active{
+    background-color: #ff160e;
+}

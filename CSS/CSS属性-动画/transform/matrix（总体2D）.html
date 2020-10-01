@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>matrix</title>
+    <!--把前面的都可加入-->
+    <!--a c e
+        b d f
+        0 0 1-->
+    <!--matrix用一个3行3列矩阵表示，a b是x轴，c d表示y轴，e f列表z轴-->
+    <!--a d表示缩放，如果没有，值为1-->
+    <!--b和c表示扭曲，如果没有就为0-->
+    <!--e f表位移，没有则为0-->
+    <!--如果旋转，旋转角度为θ-->
+    <style>
+        .box{
+            height: 200px;
+            width: 200px;
+            background-color: #ff0;
+            margin: 100px auto;
+            color: #fff;
+            /*方法1：*/
+            /*-webkit-transform: translate(100px,200px) rotate(30deg) scale(1.5,2);*/
+            /*-moz-transform: translate(100px,200px) rotate(30deg) scale(1.5,2);*/
+            /*-ms-transform: translate(100px,200px) rotate(30deg) scale(1.5,2);*/
+            /*-o-transform: translate(100px,200px) rotate(30deg) scale(1.5,2);*/
+            /*transform: translate(100px,200px) rotate(30deg) scale(1.5,2);*/
+
+            /*方法2：*/
+            /*太复杂*/
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">干得漂亮！</div>
+</body>
+</html>
