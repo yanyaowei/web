@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,inital-scale=1.0,maximum-scale=1.0,user-scaleable=no">
+    <meta http-equiv="x-ua-compatible" content="IE=Edge,chrome=1">
+    <title>媒体查询</title>
+    <script src="http://oss.maxcdn.cm/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="http://oss.maxcdn.cm/libs/responed.js//responed.min.js"></script>
+    <link rel="stylesheet" href="screen480.css" media="screen and (max-width:480px)">
+    <link rel="stylesheet" href="screen800.css" media="screen and (min-width:480px) and (max-width:800px)">
+    <link rel="stylesheet" href="screengo.css" media="screen and (min-width:800px)">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .menu{
+            overflow: hidden;
+            width: 100%;
+            height: 44px;
+            line-height: 44px;
+        }
+        li{            list-style-type: none;
+            float: left;
+            width: 20%;
+            text-align: center;
+            background-color: #ffedc7;
+        }
+        a{
+            text-decoration: none;
+            color: #2430ff;
+        }
+        @media screen and (max-width: 480px){
+            .menu{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<ul class="menu">
+    <li><a href="#">菜单项1</a></li>
+    <li><a href="#">菜单项2</a></li>
+    <li><a href="#">菜单项3</a></li>
+    <li><a href="#">菜单项4</a></li>
+    <li><a href="#">菜单项5</a></li>
+</ul>
+</body>
+</html>

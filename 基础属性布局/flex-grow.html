@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex-grow用于给子元素分比例</title>
+    <style>
+        .box{
+            width: 100%;
+            height:800px;
+            display: flex;
+            align-items: stretch;
+            border: 1px solid brown;
+        }
+        .box1{
+            height: 100px;
+            background-color: #f00;
+            flex-grow: 4;
+        }
+        .box2{
+            height: 300px;
+            background-color: #0f0;
+            /*font-size: 30px;*/
+            flex-grow: 3;
+        }
+        .box3{
+            height: 400px;
+            background-color: #00f;
+            flex-grow: 3;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="box1">第1个盒子</div>
+    <div class="box2">第2个盒子</div>
+    <div class="box3">第3个盒子</div>
+</div>
+</body>
+</html>
