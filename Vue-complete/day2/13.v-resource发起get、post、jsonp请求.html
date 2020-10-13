@@ -26,7 +26,7 @@
             },
             postInfo() {//发起post请求   手动发起的post请求默认没有表单格式，有的服务器无法处理
                 // 通过post方法的第三个参数{emulateJSON：true}，设置提交的表单为普通表单数据格式
-                this.$http.post('http://vue.studyit.io/api/post', {}, {emulateJSON: true}).then(result => {
+                this.$http.post('http://www.liulongbin.top:3005/api/post', {}, {emulateJSON: true}).then(result => {
                     console.log(result)
                     document.write('成功请求')
                 }).err(
@@ -34,7 +34,7 @@
                 )
             },
             jsonpInfo() {
-                this.$http.jsonp('http://vue.studyit.io/api/jsonp').then(result => {
+                this.$http.jsonp('http://www.liulongbin.top:3005/api/jsonp').then(result => {
                     console.log(result)
                 }).err(
                     document.write('请求失败')
