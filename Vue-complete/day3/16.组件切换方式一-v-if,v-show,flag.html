@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件切换</title>
+</head>
+<body>
+<div id="app">
+    <!--只能切换两个-->
+    <a href="" @click.prevent="flag=true">登录</a>
+    <a href="" @click.prevent="flag=false">注册</a>
+    <login v-if="flag"></login>
+    <register v-else="flag"></register>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    Vue.component('login',{
+        template:'<h3>登陆组件</h3>'
+    })
+
+    Vue.component('register',{
+        template:'<h3>注册组件</h3>'
+    })
+
+
+
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            flag:false
+        },
+        methods:{}
+    });
+</script>
+</body>
+</html>

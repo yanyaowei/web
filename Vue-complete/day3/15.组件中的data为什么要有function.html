@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <counter></counter>
+    <counter></counter>
+    <counter></counter>
+</div>
+<template id="tmp1">
+    <div>
+    <input type="button" value="+1" @click="increase">
+    <h3>{{count}}</h3>
+    </div>
+</template>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+//计数器组件，身上有个按钮，每当点击按钮，让data中的count值加1
+    Vue.component('counter',({
+        template:'#tmp1',
+        data:function (){
+            return {count:0};//这样保证每个counter里的data互不影响
+        },
+        methods:{
+            increase(){
+                this.count++;
+            }
+
+        }
+    }))
+
+    var vm=new Vue({
+        el:"#app",
+        data:{},
+        methods:{}
+    });
+</script>
+</body>
+</html>
