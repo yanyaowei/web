@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--<mylogin></mylogin>-->
+    <login></login>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    //定义组件的时候如果定义全局组件使用Vue.compoent（'组件的名称',{})
+
+    //通过对象字面量的形式定义一个组件模板对象
+    var login={
+        template:'<h1>123</h1>'
+    }
+    //通过Vue.component把组件模板对象注册为一个全局的Vue组件，
+    // 为这个组件起了一个名称，可以通过标签的形式在页面中直接引入这个组件
+  //  Vue.component('mylogin',login)
+
+    //创建Vue实例，得到ViewModel
+    var vm=new Vue({
+        el:'#app',
+        data:{},
+        methods:{},
+        components:{
+            //'组件的名称':{组建的模板对象}
+           // 'mylogin':login
+            login
+        }
+    });
+</script>
+</body>
+</html>

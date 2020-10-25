@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--父组件向子组件传递方法使用的是事件绑定机制v-on，当我们自定义了一个时间属性之后，那么子组件就能通过某些方式来调用传递进去的这个方法了-->
+    <com2 @func123="show"></com2>
+</div>
+<template id="tmp1">
+    <div>
+        <h1>这是子组件</h1>
+        <input type="button" value="这是子组件中的按钮，点击它触发父组件传递过来的方法"
+        @click="myclick">
+    </div>
+</template>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    //定义了一个字面量类型的组件模板对象
+    var com2={
+        template:'#tmp1',//通过指定一个Id，表示说要去加载这个指南Id的template元素中的内容
+        data(){
+            return{
+                sonmsg:{name:'大头儿子',age:6}
+            }
+        },
+        methods:{
+            myclick(){
+                //当点击子组件的按钮时如何拿到父组件传递过来的func方法，并调用这个方法：
+                //emit英文原意是触发。调用、发射的意思
+                // this.$emit('func123',123,456)
+                this.$emit('func123',this.sonmsg)
+            }
+        }
+    }
+
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            datamsgFromSon:null
+        },
+        methods:{
+            // show(data,data2){//可以加很多参数
+            show(data){
+                // console.log('调用了父组件身上的show方法'+data)
+                // console.log(data)
+                this.datamsgFromSon=data
+            }
+        },
+        components:{
+            com2//相当于com2:com2
+        }
+    });
+</script>
+</body>
+</html>
